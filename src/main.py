@@ -1,12 +1,14 @@
+import os
 import uvicorn
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from routers import projects
-from core.config import AppConfig
+from core.config import AppConfig, PathConfig
 from core.database import init_db
 from core.logger import logger
-from contextlib import asynccontextmanager
 
 
 @asynccontextmanager
@@ -34,6 +36,9 @@ app.add_middleware(
 )
 
 app.include_router(projects.router)
+
+os.makedirs(PathConfig.IMAGES_DIR, exist_ok=True)
+app.mount("/images", StaticFiles(directory=PathConfig.IMAGES_DIR), name="images")
 
 
 @app.get("/")

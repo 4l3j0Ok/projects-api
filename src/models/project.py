@@ -11,12 +11,10 @@ class ProjectBase(SQLModel):
         max_length=500,
     )
     url: str = Field(default="https://example.alejoide.com", title="URL del proyecto")
+    image: Optional[str] = Field(default=None, title="Imagen del proyecto")
     repo_url: Optional[str] = Field(
-        default="https://github.com/4l3j0Ok/projects-api",
+        default=None,
         title="URL del repositorio del proyecto",
-    )
-    image: Optional[str] = Field(
-        default="https://http.dog/404.jpg", title="Imagen del proyecto"
     )
 
 
@@ -27,6 +25,7 @@ class ProjectInternal(ProjectBase):
 class Project(ProjectInternal, table=True):
     __tablename__ = "projects"
 
+    active: bool = Field(default=True)
     created_at: datetime = Field(default_factory=datetime.now)
     updated_at: datetime = Field(default_factory=datetime.now)
 
@@ -46,19 +45,7 @@ class ProjectUpdate(ProjectBase):
     repo_url: Optional[str] = Field(
         default=None, title="URL del repositorio del proyecto"
     )
-    image: Optional[str] = Field(
-        default="https://http.dog/404.jpg",
-        title="Imagen del proyecto",
-        description="URL de la imagen del proyecto. Debe ser una URL válida.",
-    )
 
 
-class ProjectRead(SQLModel):
-    id: int
-    title: str
-    description: str
-    url: str
-    repo_url: Optional[str] = None
-    created_at: datetime
-    updated_at: datetime
-    image: Optional[str] = None
+class ProjectRead(ProjectBase):
+    pass

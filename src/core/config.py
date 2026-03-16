@@ -11,6 +11,7 @@ load_dotenv()
 class PathConfig:
     BASE_DIR = Path(__file__).parent.parent.resolve()
     DATA_DIR = BASE_DIR / "data"
+    IMAGES_DIR = DATA_DIR / "images"
 
 
 @dataclass
@@ -36,6 +37,10 @@ class AppConfig:
         for origin in os.getenv("CORS_ALLOW_ORIGINS", "*").split(",")
         if origin.strip()
     ]
+    IMAGES_BASE_URL = os.getenv(
+        "IMAGES_BASE_URL",
+        f"http://{os.getenv('APP_HOST', '0.0.0.0')}:{os.getenv('APP_PORT', '8000')}/images",
+    )
     # Mantener esta lista ordenada alfabéticamente para
     # facilitar su lectura y mantenimiento
     INCLUDED_ROUTERS = ["projects"]
