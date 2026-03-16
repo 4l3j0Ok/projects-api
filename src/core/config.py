@@ -31,6 +31,11 @@ class AppConfig:
     APP_VERSION = os.getenv("APP_VERSION", "0.1.0")
     APP_DESCRIPTION = "API para la gestión de proyectos."
     DEV_MODE = os.getenv("DEV_MODE", "False").lower() == "true"
+    CORS_ALLOW_ORIGINS = [
+        origin.strip()
+        for origin in os.getenv("CORS_ALLOW_ORIGINS", "*").split(",")
+        if origin.strip()
+    ]
     # Mantener esta lista ordenada alfabéticamente para
     # facilitar su lectura y mantenimiento
     INCLUDED_ROUTERS = ["projects"]
