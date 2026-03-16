@@ -4,13 +4,20 @@ from datetime import datetime
 
 
 class ProjectBase(SQLModel):
-    title: str = Field(..., title="Título del proyecto", max_length=100)
-    description: str = Field(..., title="Descripción del proyecto", max_length=500)
-    url: str = Field(..., title="URL del proyecto")
-    repo_url: Optional[str] = Field(
-        default=None, title="URL del repositorio del proyecto"
+    title: str = Field(default="Proyecto", title="Título del proyecto", max_length=100)
+    description: str = Field(
+        default="Descripción del proyecto",
+        title="Descripción del proyecto",
+        max_length=500,
     )
-    image: Optional[str] = Field(default=None, title="Imagen del proyecto")
+    url: str = Field(default="https://example.alejoide.com", title="URL del proyecto")
+    repo_url: Optional[str] = Field(
+        default="https://github.com/4l3j0Ok/projects-api",
+        title="URL del repositorio del proyecto",
+    )
+    image: Optional[str] = Field(
+        default="https://http.dog/404.jpg", title="Imagen del proyecto"
+    )
 
 
 class ProjectInternal(ProjectBase):
@@ -25,11 +32,7 @@ class Project(ProjectInternal, table=True):
 
 
 class ProjectCreate(ProjectBase):
-    image: Optional[str] = Field(
-        default="https://http.dog/404.jpg",
-        title="Imagen del proyecto",
-        description="URL de la imagen del proyecto. Debe ser una URL válida.",
-    )
+    pass
 
 
 class ProjectUpdate(ProjectBase):

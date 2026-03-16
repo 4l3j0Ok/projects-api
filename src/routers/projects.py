@@ -10,10 +10,10 @@ router = APIRouter(
 )
 
 
-@router.get("/", response_model=list[ProjectRead | None])
+@router.get("/", response_model=list[ProjectRead])
 def get_projects(
     session: Session = Depends(get_session),
-) -> list[ProjectRead | None]:
+) -> list[ProjectRead]:
     return ProjectService.get_projects(session)
 
 
