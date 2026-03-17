@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/4l3j0Ok/projects-api/compare/1.0.1...1.0.2) (2026-03-17)
+
+
+### Bug Fixes
+
+* update Docker credentials in CI configuration to use correct secret for token ([8ef6fca](https://github.com/4l3j0Ok/projects-api/commit/8ef6fcaf95cca9c44c724349830cca3c87050734))
+
 ## [1.0.1](https://github.com/4l3j0Ok/projects-api/compare/1.0.0...1.0.1) (2026-03-17)
 
 
