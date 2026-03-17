@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/4l3j0Ok/projects-api/compare/1.0.2...1.0.3) (2026-03-17)
+
+
+### Bug Fixes
+
+* specify branch for deployment in CI configuration ([8131134](https://github.com/4l3j0Ok/projects-api/commit/813113473216be67cd5fb938c556fcd6762c0d6f))
+
 ## [1.0.2](https://github.com/4l3j0Ok/projects-api/compare/1.0.1...1.0.2) (2026-03-17)
 
 
