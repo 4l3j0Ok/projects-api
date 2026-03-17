@@ -28,7 +28,7 @@ class DatabaseConfig:
 class AppConfig:
     APP_HOST = os.getenv("APP_HOST", "0.0.0.0")
     APP_PORT = int(os.getenv("APP_PORT", 8000))
-    APP_NAME = "Gestión Digital API"
+    APP_NAME = "Projects API"
     APP_VERSION = os.getenv("APP_VERSION", "0.1.0")
     APP_DESCRIPTION = "API para la gestión de proyectos."
     DEV_MODE = os.getenv("DEV_MODE", "False").lower() == "true"
