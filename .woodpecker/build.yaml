@@ -7,7 +7,7 @@ steps:
       username:
         from_secret: dockerhub_username
       password:
-        from_secret: dockerhub_password
+        from_secret: dockerhub_token
       tags:
         - latest
         - ${CI_COMMIT_TAG}
