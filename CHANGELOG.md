@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/4l3j0Ok/projects-api/compare/1.0.4...1.0.5) (2026-03-17)
+
+
+### Bug Fixes
+
+* add user and group for application in Dockerfile ([5c6b7bb](https://github.com/4l3j0Ok/projects-api/commit/5c6b7bb9df26d3d7833abc79177d80a7df35c57f))
+
 ## [1.0.4](https://github.com/4l3j0Ok/projects-api/compare/1.0.3...1.0.4) (2026-03-17)
 
 
