@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/4l3j0Ok/projects-api/compare/1.0.0...1.0.1) (2026-03-17)
+
+
+### Bug Fixes
+
+* update Docker credentials in CI configuration to use Docker Hub secrets ([ead190c](https://github.com/4l3j0Ok/projects-api/commit/ead190cfc61c6545c5c415f0115429c6ff0f7f23))
+
 # 1.0.0 (2026-03-17)
 
 
