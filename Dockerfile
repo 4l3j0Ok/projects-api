@@ -23,6 +23,9 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # Then, use a final image without uv
 FROM python:3.14-alpine
+
+RUN addgroup -S app && adduser -S app -G app
+
 # It is important to use the image that matches the builder, as the path to the
 # Python executable must be the same, e.g., using `python:3.11-slim-bookworm`
 # will fail.
@@ -34,6 +37,10 @@ COPY --from=builder --chown=app:app /app /app
 ENV PATH="/app/.venv/bin:$PATH"
 
 WORKDIR /app/src
+
+USER app
+
+EXPOSE 8000
 
 # Run the FastAPI application by default
 CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0"]
