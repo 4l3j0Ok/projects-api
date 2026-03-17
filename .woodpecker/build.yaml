@@ -19,7 +19,8 @@ steps:
       token:
         from_secret: woodpecker_deploy_token
       repositories:
-        - 4l3j0Ok/alejoide-web
+        - 4l3j0Ok/alejoide-web@main
+      deploy: alejoide-web
     when:
       status:
         - success
