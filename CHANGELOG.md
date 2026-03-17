@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/4l3j0Ok/projects-api/compare/1.0.3...1.0.4) (2026-03-17)
+
+
+### Bug Fixes
+
+* update deployment repository reference to include pipeline number ([9f165cb](https://github.com/4l3j0Ok/projects-api/commit/9f165cb8babef9f04598aa8207544f6efca65c3c))
+
 ## [1.0.3](https://github.com/4l3j0Ok/projects-api/compare/1.0.2...1.0.3) (2026-03-17)
 
 
