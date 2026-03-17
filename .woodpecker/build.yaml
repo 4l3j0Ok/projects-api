@@ -5,9 +5,9 @@ steps:
       registry: docker.io
       repo: alejoide/projects-api
       username:
-        from_secret: github_username
+        from_secret: dockerhub_username
       password:
-        from_secret: github_token
+        from_secret: dockerhub_password
       tags:
         - latest
         - ${CI_COMMIT_TAG}
