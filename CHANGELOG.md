@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/4l3j0Ok/projects-api/compare/1.0.5...1.0.6) (2026-03-17)
+
+
+### Bug Fixes
+
+* change app name ([473d671](https://github.com/4l3j0Ok/projects-api/commit/473d67154e8acaa63e51f9f05942f405d8793f20))
+
 ## [1.0.5](https://github.com/4l3j0Ok/projects-api/compare/1.0.4...1.0.5) (2026-03-17)
 
 
