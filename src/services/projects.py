@@ -1,5 +1,6 @@
 import os
 import uuid
+from datetime import datetime
 from io import BytesIO
 from typing import Optional
 
@@ -8,7 +9,7 @@ from PIL import Image
 from sqlmodel import Session, select
 
 from core.config import AppConfig, PathConfig
-from models.project import Project, ProjectCreate
+from models.project import Project, ProjectCreate, ProjectUpdate
 
 
 class ProjectService:
@@ -91,6 +92,46 @@ class ProjectService:
             session.add(db_project)
             session.commit()
             session.refresh(db_project)
+
+        if db_project.image:
+            db_project.image = ProjectService._image_to_url(db_project.image)
+
+        return db_project
+
+    @staticmethod
+    def update_project(
+        project_id: int,
+        project: ProjectUpdate,
+        image_bytes: Optional[bytes],
+        session: Session,
+    ) -> Project:
+        db_project = session.get(Project, project_id)
+        if not db_project:
+            raise HTTPException(status_code=404, detail="Proyecto no encontrado")
+
+        update_data = project.model_dump(exclude_unset=True)
+        for key, value in update_data.items():
+            setattr(db_project, key, value)
+
+        if image_bytes:
+            try:
+                filename = ProjectService._save_image_to_file(
+                    image_bytes, db_project.id
+                )
+            except Exception as e:
+                raise HTTPException(
+                    status_code=400, detail=f"Error al procesar la imagen: {str(e)}"
+                )
+
+            if db_project.image and ProjectService._is_local_image(db_project.image):
+                ProjectService._delete_image_file(db_project.image)
+
+            db_project.image = filename
+
+        db_project.updated_at = datetime.now()
+        session.add(db_project)
+        session.commit()
+        session.refresh(db_project)
 
         if db_project.image:
             db_project.image = ProjectService._image_to_url(db_project.image)

@@ -10,7 +10,9 @@ class ProjectBase(SQLModel):
         title="Descripción del proyecto",
         max_length=500,
     )
-    url: str = Field(default="https://example.alejoide.com", title="URL del proyecto")
+    url: Optional[str] = Field(
+        default="https://example.alejoide.com", title="URL del proyecto"
+    )
     image: Optional[str] = Field(default=None, title="Imagen del proyecto")
     repo_url: Optional[str] = Field(
         default=None,
