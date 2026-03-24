@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/4l3j0Ok/projects-api/compare/1.1.0...1.2.0) (2026-03-24)
+
+
+### Features
+
+* add LICENSE and update README with project structure details ([14e94c7](https://github.com/4l3j0Ok/projects-api/commit/14e94c790ff1c0b9445673eada7a0eb006604cce))
+
 # [1.1.0](https://github.com/4l3j0Ok/projects-api/compare/1.0.6...1.1.0) (2026-03-24)
 
 
