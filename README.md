@@ -56,3 +56,8 @@ Podes forkear el repositorio, realizar tus cambios y luego abrir un pull request
 
 ## Licencia
 
+El proyecto está licenciado bajo la [MIT License](LICENSE.md), lo que permite su uso, modificación y distribución libremente, siempre y cuando se mantenga el aviso de copyright y la licencia en todas las copias o partes sustanciales del software.
+
+---
+
+Alejoide 🚀
