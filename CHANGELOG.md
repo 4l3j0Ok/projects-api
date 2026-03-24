@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/4l3j0Ok/projects-api/compare/1.0.6...1.1.0) (2026-03-24)
+
+
+### Features
+
+* update project model and add update functionality for projects ([f760445](https://github.com/4l3j0Ok/projects-api/commit/f76044552626ee573b58493ace8880eb4e04f90d))
+
 ## [1.0.6](https://github.com/4l3j0Ok/projects-api/compare/1.0.5...1.0.6) (2026-03-17)
 
 
